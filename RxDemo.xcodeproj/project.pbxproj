@@ -21,6 +21,7 @@
 		FEBA6DEB1DE2C4EA000478D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEBA6DE91DE2C4EA000478D9 /* LaunchScreen.storyboard */; };
 		FEBA6DF61DE2C4EB000478D9 /* RxDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA6DF51DE2C4EB000478D9 /* RxDemoTests.swift */; };
 		FEBA6E011DE2C4EB000478D9 /* RxDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA6E001DE2C4EB000478D9 /* RxDemoUITests.swift */; };
+		FEF1F9F91DEE671E0018DFFB /* SectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF1F9F81DEE671E0018DFFB /* SectionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		FEBA6E001DE2C4EB000478D9 /* RxDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDemoUITests.swift; sourceTree = "<group>"; };
 		FEBA6E021DE2C4EB000478D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEE173E87ABA740246863C2C /* Pods-RxDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDemo/Pods-RxDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		FEF1F9F81DEE671E0018DFFB /* SectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				FE4243441DE533E300319203 /* ViewController.swift */,
 				FE4243471DE5342400319203 /* BasicModel.swift */,
 				FE4243491DE5620C00319203 /* BasicCell.swift */,
+				FEF1F9F81DEE671E0018DFFB /* SectionTableViewController.swift */,
 			);
 			path = RxWhy;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				FE4243461DE533E300319203 /* ViewController.swift in Sources */,
 				FE4243451DE533E300319203 /* ContentOffsetController.swift in Sources */,
 				FE4243481DE5342400319203 /* BasicModel.swift in Sources */,
+				FEF1F9F91DEE671E0018DFFB /* SectionTableViewController.swift in Sources */,
 				FEBA6DE11DE2C4EA000478D9 /* AppDelegate.swift in Sources */,
 				FE42434D1DE57C6100319203 /* SupportFunction.swift in Sources */,
 			);

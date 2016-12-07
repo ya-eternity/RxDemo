@@ -22,7 +22,8 @@ class ContentOffsetController: UIViewController {
         BasicModel(name: "Nike", age: 34),
         BasicModel(name: "Zoey", age: 21),
         BasicModel(name: "Lion", age: 3),
-        BasicModel(name: "Snail", age: 10)
+        BasicModel(name: "Snail", age: 10),
+        BasicModel(name: "Dog", age: 9)
     ]
     
     
@@ -60,7 +61,14 @@ class ContentOffsetController: UIViewController {
                 let model = ContentOffsetController.initialValue[indexPath.row]
                 Alert.showInfo(title: model.name, message: String(model.age))
             }).addDisposableTo(disposeBag)
+        tableview.rx.itemDeselected
+            .subscribe(onNext: { indexPath in
+                let model = ContentOffsetController.initialValue[indexPath.row]
+                Alert.showInfo(title: model.name, message: String(model.age))
+            }).addDisposableTo(disposeBag)
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

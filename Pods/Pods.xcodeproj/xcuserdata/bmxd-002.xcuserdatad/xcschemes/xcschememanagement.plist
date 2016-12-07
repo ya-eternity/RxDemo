@@ -29,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>RxDataSources.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -47,12 +52,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>16AF9D24CB3BE72A63BD4B631FA54C2A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2C11FF8FD6A47CFBC6963EEECB9950FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6A6C88A190B16C9DFE6101E43789E867</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7A1EF9272B367389294D33770613D607</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A51574374C7247C9C468A21E1B790EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA1B2627E3DF687398335BC5736F25F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

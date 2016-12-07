@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct BasicModel {
     let name: String
@@ -21,6 +22,13 @@ extension BasicModel: Hashable {
 
 func ==(lhs: BasicModel, rhs: BasicModel) -> Bool {
     return lhs.name == rhs.name
+}
+
+extension BasicModel: IdentifiableType {
+    var identity: Int {
+        return hashValue
+    }
+    
 }
 
 extension BasicModel: Comparable { }
