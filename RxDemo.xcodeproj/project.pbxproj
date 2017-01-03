@@ -10,6 +10,9 @@
 		C7ED9DDB28B5F3DDFF5EB5DD /* Pods_RxDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0863F86EF9D7EA14292A4B13 /* Pods_RxDemoTests.framework */; };
 		DF8B4181E763AFFEB271DAFF /* Pods_RxDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102EC682EACFA835E2655AFA /* Pods_RxDemoUITests.framework */; };
 		E982420EF36F088BB94AFBB1 /* Pods_RxDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AC7C3E757C9AFF5471A8A3 /* Pods_RxDemo.framework */; };
+		FE2415F61E1B7BD20078051E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2415F51E1B7BD20078051E /* UserModel.swift */; };
+		FE2415F81E1B82EA0078051E /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2415F71E1B82EA0078051E /* NetworkController.swift */; };
+		FE2415FB1E1BAA170078051E /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2415FA1E1BAA170078051E /* Observable+ObjectMapper.swift */; };
 		FE4243451DE533E300319203 /* ContentOffsetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4243431DE533E300319203 /* ContentOffsetController.swift */; };
 		FE4243461DE533E300319203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4243441DE533E300319203 /* ViewController.swift */; };
 		FE4243481DE5342400319203 /* BasicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4243471DE5342400319203 /* BasicModel.swift */; };
@@ -50,6 +53,9 @@
 		7DD3A6FFE6CDF1F925A06AF3 /* Pods-RxDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDemoTests/Pods-RxDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5AC7C3E757C9AFF5471A8A3 /* Pods_RxDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EEC142D26A7707E25A4447 /* Pods-RxDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDemoTests/Pods-RxDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE2415F51E1B7BD20078051E /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		FE2415F71E1B82EA0078051E /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		FE2415FA1E1BAA170078051E /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
 		FE4243431DE533E300319203 /* ContentOffsetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentOffsetController.swift; sourceTree = "<group>"; };
 		FE4243441DE533E300319203 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE4243471DE5342400319203 /* BasicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicModel.swift; sourceTree = "<group>"; };
@@ -122,6 +128,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE2415F21E1B4DB60078051E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FE2415F71E1B82EA0078051E /* NetworkController.swift */,
+				FE2415F51E1B7BD20078051E /* UserModel.swift */,
+				FE2415F91E1BA8860078051E /* ObjectMapper */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FE2415F91E1BA8860078051E /* ObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				FE2415FA1E1BAA170078051E /* Observable+ObjectMapper.swift */,
+			);
+			path = ObjectMapper;
+			sourceTree = "<group>";
+		};
 		FE4243421DE533E300319203 /* RxWhy */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +191,7 @@
 		FEBA6DDF1DE2C4EA000478D9 /* RxDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FE2415F21E1B4DB60078051E /* Network */,
 				FE42434B1DE57C3C00319203 /* Support */,
 				FE4243421DE533E300319203 /* RxWhy */,
 				FEBA6DE01DE2C4EA000478D9 /* AppDelegate.swift */,
@@ -462,13 +487,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2415FB1E1BAA170078051E /* Observable+ObjectMapper.swift in Sources */,
 				FE42434A1DE5620C00319203 /* BasicCell.swift in Sources */,
 				FE4243461DE533E300319203 /* ViewController.swift in Sources */,
 				FE4243451DE533E300319203 /* ContentOffsetController.swift in Sources */,
+				FE2415F61E1B7BD20078051E /* UserModel.swift in Sources */,
 				FE4243481DE5342400319203 /* BasicModel.swift in Sources */,
 				FEF1F9F91DEE671E0018DFFB /* SectionTableViewController.swift in Sources */,
 				FEBA6DE11DE2C4EA000478D9 /* AppDelegate.swift in Sources */,
 				FE42434D1DE57C6100319203 /* SupportFunction.swift in Sources */,
+				FE2415F81E1B82EA0078051E /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

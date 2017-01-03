@@ -4,8 +4,8 @@ project 'RxDemo.xcodeproj'
 def net_pods
     pod 'Alamofire'
     pod 'RxAlamofire'
-    pod 'Moya'
-    pod 'Moya/RxSwift'
+    pod 'Moya', :git => 'https://github.com/Moya/Moya', :branch => 'swift3-availability'
+    pod 'Moya/RxSwift', :git => 'https://github.com/Moya/Moya', :branch => 'swift3-availability'
 end
 
 def model_pods
@@ -20,11 +20,13 @@ target 'RxDemo' do
   use_frameworks!
 
   # Pods for RxDemo
-    pod 'RxSwift'
+    pod 'RxSwift', '~>3.1.0'
     pod 'RxCocoa'
     pod 'RxDataSources'
     #pod 'Alamofire'
     #pod 'RxAlamofire'
+    net_pods
+    model_pods
     post_install do |installer|
         installer.pods_project.targets.each do |target|
             target.build_configurations.each do |config|

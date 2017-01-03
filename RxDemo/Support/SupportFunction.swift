@@ -10,6 +10,12 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+#if DEBUG
+let host = "https://stg-rxswift.leanapp.cn"
+#else
+let host = "https://rxswift.leanapp.cn"
+#endif
+
 struct Alert {
     
     static func showInfo(title: String, message: String? = nil) {
