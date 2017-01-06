@@ -47,6 +47,9 @@ class ContentOffsetController: UIViewController {
                 cell.age.text = String(element.age)
         }.addDisposableTo(disposeBag)
         
+//        dataSource.asObservable()
+//            .bi(tableview.rx.items(cellIdentifier: "BasicCell", cellType: BasicCell.self))
+        
         dataSource.value.append(contentsOf: ContentOffsetController.initialValue)
         
 //        tableview.rx.modelSelected(BasicModel.self)

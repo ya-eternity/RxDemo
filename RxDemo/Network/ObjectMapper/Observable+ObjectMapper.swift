@@ -14,11 +14,22 @@ public extension ObservableType where E == Response {
     
     
 //    public func mapObject<T: Mappable>(type: T.Type) -> Observable<T> {
-//        return observeOn(SerialDispatchQueueScheduler(globalConcurrentQueueQOS: .Background))
+//        return observeOn(MainScheduler.instance)
 //            .flatMap { response -> Observable<T> in
-//                return Observable.just(try response.mapObject())
+//                return Observable.just(try response.mapObject()())
 //            }
 //            .observeOn(MainScheduler.instance)
 //    }
-    
+//    
+//    
+//    public func mapArray<T: Mappable>(type: T.Type) -> Observable<[T]> {
+//        return observeOn(SerialDispatchQueueScheduler(qos: .background))
+//            .flatMap { response -> Observable<[T]> in
+//                guard let object = Mapper<T>().mapArray(response["data"]) else {
+//                    throw AlamofireError.JSONMapping(response)
+//                }
+//                return Observable.just(object)
+//            }
+//            .observeOn(MainScheduler.instance)
+//    }
 }
