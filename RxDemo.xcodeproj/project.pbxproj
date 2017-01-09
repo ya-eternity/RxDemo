@@ -63,6 +63,8 @@
 		FE4243471DE5342400319203 /* BasicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicModel.swift; sourceTree = "<group>"; };
 		FE4243491DE5620C00319203 /* BasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
 		FE42434C1DE57C6100319203 /* SupportFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportFunction.swift; sourceTree = "<group>"; };
+		FE42BF971E23307B002E774E /* Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subject.playground; sourceTree = "<group>"; };
+		FE42BF981E237927002E774E /* 变换-过滤-组合序列.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "变换-过滤-组合序列.playground"; sourceTree = "<group>"; };
 		FEB9FABC1E1E29C6002FA0E2 /* Request+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+ObjectMapper.swift"; sourceTree = "<group>"; };
 		FEB9FABE1E1E2C4D002FA0E2 /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		FEB9FAC01E1E3357002FA0E2 /* Rx.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Rx.playground; sourceTree = "<group>"; };
@@ -206,6 +208,8 @@
 				FEBA6DE71DE2C4EA000478D9 /* Assets.xcassets */,
 				FEBA6DE91DE2C4EA000478D9 /* LaunchScreen.storyboard */,
 				FEBA6DEC1DE2C4EA000478D9 /* Info.plist */,
+				FE42BF981E237927002E774E /* 变换-过滤-组合序列.playground */,
+				FE42BF971E23307B002E774E /* Subject.playground */,
 				FEB9FAC01E1E3357002FA0E2 /* Rx.playground */,
 			);
 			path = RxDemo;

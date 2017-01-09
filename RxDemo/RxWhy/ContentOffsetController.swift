@@ -33,13 +33,14 @@ class ContentOffsetController: UIViewController {
         tableview.dataSource = nil
         tableview.delegate = nil
         
+        //contentOffset
         tableview.rx.contentOffset
             .map { $0.y }
             .subscribe(onNext: { [unowned self] in
                 self.title = "contentOffset.y = \($0)"
             }).addDisposableTo(disposeBag)
         
-        
+        // dataSources绑定
         dataSource.asObservable()
             .bindTo(tableview.rx.items(cellIdentifier: "BasicCell", cellType: BasicCell.self)) { (_, element, cell)
                 in
@@ -58,6 +59,7 @@ class ContentOffsetController: UIViewController {
 //                Alert.showInfo(title: model.name, message: String(model.age))
 //            }).addDisposableTo(disposeBag)
         
+        //代理
         tableview.rx.itemSelected
             .subscribe(onNext: { [unowned self] indexPath in
                 self.tableview.deselectRow(at: indexPath, animated: true)
