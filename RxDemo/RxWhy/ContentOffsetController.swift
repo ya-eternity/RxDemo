@@ -30,6 +30,13 @@ class ContentOffsetController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Observable<Int>.interval(0.1, scheduler: SerialDispatchQueueScheduler(qos: .background))
+            .take(100)
+            .sample(Observable<Int>.interval(1, scheduler:         SerialDispatchQueueScheduler(qos: .background)))
+            .subscribe {
+                print("sample", $0)
+            }.addDisposableTo(disposeBag)
+        
         tableview.dataSource = nil
         tableview.delegate = nil
         
