@@ -34,7 +34,7 @@ originalSequence
 
 //flapMap
 //flapMap 将一个序列发射的值转换成序列，然后将他们压平到一个序列。这也类似于 SequenceType 中的 flatMap
-let sequenceInt = Observable.of(6, 2, 4)
+let sequenceInt = Observable.of(1, 2, 4)
 let sequenceString = Observable.of("A", "B", "C", "D", "E", "F", "--")
 sequenceInt
     .flatMap { (x: Int) -> Observable<String> in
@@ -160,4 +160,148 @@ Observable<Int>.interval(0.1, scheduler: SerialDispatchQueueScheduler(qos: .back
             print("sample", $0)
     }.addDisposableTo(disposeBag)
 
+
+//Mark: - 组合序列
+
+//startWith 在一个序前插入一个值
+_ = sequenceInt
+    .startWith(-1)
+    .startWith(-2)
+    .subscribe { print("startWith", $0)}
+
+//combineLatest
+//当两个序列中的任何一个发射了数据时，combineLatest 会结合并整理每个序列发射的最近数据项。
+let intOb1 = PublishSubject<String>()
+let intOb2 = PublishSubject<Int>()
+let intOb3 = PublishSubject<Int>()
+_ = Observable.combineLatest(intOb1, intOb2) {
+    "(\($0) \($1))"
+    }
+    .subscribe { print("combineLatest", $0) }
+
+intOb1.onNext("A")
+intOb2.onNext(1)
+intOb1.onNext("B")
+intOb2.onNext(2)
+
+let intOb4 = Observable.just(2)
+let intOb5 = Observable.of(0, 1, 2, 3)
+let intOb6 = Observable.of(0, 1, 2, 3, 4)
+
+_ = Observable.combineLatest(intOb4, intOb5, intOb6) {
+    "\($0) \($1) \($2)"
+    }
+    .subscribe {
+        print("combineLatest2", $0)
+}
+
+let intOb7 = Observable.just(2)
+let intOb8 = ReplaySubject<Int>.create(bufferSize: 1)
+intOb8.onNext(0)
+let intOb9 = Observable.of(0, 1, 2, 3)
+intOb8.onNext(1)
+
+_ = Observable.combineLatest(intOb7, intOb8, intOb9,resultSelector: {
+    "\($0) \($1) \($2)"
+    }).subscribe{ print("combineLatest3", $0) }
+intOb8.onNext(2)
+intOb8.onNext(3)
+
+Observable.combineLatest([intOb4, intOb5, intOb6]) {
+        "\($0[0]) \($0[1]) \($0[2])"
+    }.subscribe { (event) -> Void in
+        print(event)
+}
+
+//??????
+let stringObservable = Observable.just("❤️")
+let fruitObservable = Observable.from(["🍎", "🍐", "🍊"])
+let animalObservable = Observable.of("🐶", "🐱", "🐭", "🐹")
+
+Observable.combineLatest([stringObservable, fruitObservable, animalObservable]) {
+    "\($0[0]) \($0[1]) \($0[2])"
+    }
+    .subscribe(onNext: { print($0) })
+    .addDisposableTo(disposeBag)
+
+//zip
+//zip 和 combineLatest 相似，不同的是每当所有序列都发射一个值时， zip 才会发送一个值。它会等待每一个序列发射值，发射次数由最短序列决定。结合的值都是一一对应的。
+let intOb11 = PublishSubject<String>()
+let intOb12 = PublishSubject<Int>()
+_ = Observable.zip(intOb11, intOb12) {
+    "(\($0) \($1))"
+    }
+    .subscribe {
+        print("zip1", $0)
+}
+
+intOb11.onNext("A")
+intOb12.onNext(1)
+intOb11.onNext("B")
+intOb11.onNext("C")
+intOb12.onNext(2)
+
+let intOb10 = Observable.of(0, 1)
+
+_ = Observable.zip(intOb10, intOb5, intOb6) {
+    ($0 + $1) * $2
+    }
+    .subscribe {
+        print("zip2", $0)
+}
+
+//merge
+//merge 会将多个序列合并成一个序列，序列发射的值按先后顺序合并。要注意的是 merge 操作的是序列，也就是说序列发射序列才可以使用 merge
+let subject1 = PublishSubject<Int>()
+let subject2 = PublishSubject<Int>()
+
+_ = Observable.of(subject1, subject2)
+    .merge()
+    .subscribe {
+        print("merge1", $0)
+}
+
+//merge 可以传递一个 maxConcurrent 的参数，你可以通过传入指定的值说明你想 merge 的最大序列。直接调用 merge() 会 merge 所有序列。你可以试试将这个 merge 2 的例子中的 maxConcurrent 改为 1 ，可以看到 subject2 发射的值都没有被合并进来。
+_ = Observable.of(subject1, subject2)
+    .merge(maxConcurrent: 1)
+    .subscribe {
+        print("merge2", $0)
+}
+subject1.onNext(20)
+subject1.onNext(40)
+subject1.onNext(60)
+subject2.onNext(1)
+subject1.onNext(80)
+subject1.onNext(100)
+subject2.onNext(1)
+
+
+//switchLatest
+//switchLatest 和 merge 有一点相似，都是用来合并序列的。然而这个合并并非真的是合并序列。事实是每当发射一个新的序列时，丢弃上一个发射的序列。
+let var1 = Variable(0)
+
+let var2 = Variable(200)
+
+// var3 是一个 Observable<Observable<Int>>
+let var3 = Variable(var1.asObservable())
+
+let d = var3
+    .asObservable()
+    .switchLatest()
+    .subscribe {
+        print("switchLatest", $0)
+}
+
+var1.value = 1
+var1.value = 2
+var1.value = 3
+var1.value = 4
+
+var3.value = var2.asObservable() // 我们在这里新发射了一个序列
+
+var2.value = 201
+
+var1.value = 5 // var1 发射的值都会被忽略
+var1.value = 6
+var1.value = 7
 
