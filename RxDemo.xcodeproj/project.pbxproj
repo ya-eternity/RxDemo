@@ -80,6 +80,7 @@
 		FEBA6DFC1DE2C4EB000478D9 /* RxDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBA6E001DE2C4EB000478D9 /* RxDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDemoUITests.swift; sourceTree = "<group>"; };
 		FEBA6E021DE2C4EB000478D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC27D9F1E25C5930066319E /* ErrorHandle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ErrorHandle.playground; sourceTree = "<group>"; };
 		FEE173E87ABA740246863C2C /* Pods-RxDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDemo/Pods-RxDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FEF1F9F81DEE671E0018DFFB /* SectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +209,7 @@
 				FEBA6DE71DE2C4EA000478D9 /* Assets.xcassets */,
 				FEBA6DE91DE2C4EA000478D9 /* LaunchScreen.storyboard */,
 				FEBA6DEC1DE2C4EA000478D9 /* Info.plist */,
+				FEC27D9F1E25C5930066319E /* ErrorHandle.playground */,
 				FE42BF981E237927002E774E /* 变换-过滤-组合序列.playground */,
 				FE42BF971E23307B002E774E /* Subject.playground */,
 				FEB9FAC01E1E3357002FA0E2 /* Rx.playground */,

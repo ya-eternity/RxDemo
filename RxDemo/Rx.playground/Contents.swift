@@ -110,11 +110,9 @@ _ = rangeSequence.subscribe { event in
 //#warning 
 //timer 创建一个带延迟的序列
 let timerSequence = Observable<Int>.timer(1, period: 1, scheduler: MainScheduler.instance)
-//while true {
-//    sleep(1)
     _ = timerSequence.subscribe { event in
         print("timer", event)
     }
     
-//}
+
 
