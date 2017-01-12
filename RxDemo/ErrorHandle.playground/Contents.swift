@@ -2,7 +2,10 @@
 
 import RxSwift
 
+playgroundShouldContinueIndefinitely()
+
 var str = "Hello, playground"
+
 
 //Mark: - 错误处理
 
@@ -261,4 +264,135 @@ _ = Observable.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
     .subscribe {
         print("reduce", $0)
 }
+
+
+//Mark: - 连接操作
+//可连接的序列和一般的序列基本是一样的，不同的就是你可以用可连接序列调整序列发射的实际。只有当你调用 connect 方法时，序列才会发射。
+func sampleWithoutConnectableOperators() {
+    print("--- sampleWithoutConnectableOperators sample ---")
+    let int1 = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+    _ = int1.subscribe {
+        print("subscription: 1 \($0)")
+    }
+    
+    delay(5) {
+        _ = int1.subscribe {
+             print("subscription: 2 \($0)")
+        }
+    }
+}
+
+//sampleWithoutConnectableOperators()
+
+//MULTICAST
+// multcast 使用起来有些麻烦，不过也更强大，传入一个 Subject ，每当序列发射值时都会传入这个 Subject
+func sampleWithMulticast() {
+    print("--- sampleWithMulticast sample ---")
+    let subject1 = PublishSubject<Int64>()
+    _ = subject1.subscribe {
+        print("multcat subject \($0)")
+    }
+    
+    let interval1 = Observable<Int64>.interval(1, scheduler: MainScheduler.instance)
+        .multicast(subject1)
+    
+    _ = interval1.subscribe {
+        print("multcat subscription: 1 \($0)")
+    }
+    
+    delay(2) {
+       _ = interval1.connect()
+    }
+    
+    
+    delay(4) {
+    _ = interval1
+            .subscribe {
+                print("multcat subscription: 2 \($0)")
+        }
+    }
+    
+    delay(6) {
+        _ = interval1
+            .subscribe {
+                print("multcat subscription: 3 \($0)")
+        }
+    }
+    
+}
+
+//sampleWithMulticast()
+
+//REPLAY
+//replay 这个操作可以让所有订阅者同一时间收到相同的值。
+//就相当于 multicast 中传入了一个 ReplaySubject .
+//publish = multicast + replay subject
+func sampleWithReplayBuffer0() {
+    print("--- sampleWithReplayBuffer0 sample ---")
+    let interval1 = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+        .replay(2)
+    
+    _ = interval1
+        .subscribe {
+            print("replay subscription: 1 \($0)")
+        }
+    delay(2) {
+        _ = interval1.connect()
+    }
+    
+    
+    delay(4) {
+        _ = interval1
+            .subscribe {
+                print("replay subscription: 2 \($0)")
+        }
+    }
+    
+    delay(6) {
+        _ = interval1
+            .subscribe {
+                print("replay subscription: 3 \($0)")
+        }
+    }
+}
+
+//sampleWithReplayBuffer0()
+
+//PUBLISH
+//其实这个和开始的 sampleWithMulticast 是一样的效果。
+//publish = multicast + publish subject
+func sampleWithPublish() {
+    print("--- sampleWithPublish ---")
+    let interval1 = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+        .publish()
+    
+    _ = interval1
+        .subscribe {
+            print("publish subscription: 1 \($0)")
+    }
+    delay(2) {
+        _ = interval1.connect()
+    }
+    
+    
+    delay(4) {
+        _ = interval1
+            .subscribe {
+                print("publish subscription: 2 \($0)")
+        }
+    }
+    
+    delay(6) {
+        _ = interval1
+            .subscribe {
+                print("publish subscription: 3 \($0)")
+        }
+    }
+}
+
+//sampleWithPublish()
+
+//REFCOUNT
+//这个是一个可连接序列的操作符 它可以将一个可连接序列变成普通的序列
+
 
