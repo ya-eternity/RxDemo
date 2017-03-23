@@ -322,8 +322,7 @@
 				TargetAttributes = {
 					FEBA6DDC1DE2C4EA000478D9 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B769F6JR7B;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					FEBA6DF01DE2C4EA000478D9 = {
 						CreatedOnToolsVersion = 8.0;
@@ -681,7 +680,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = B769F6JR7B;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RxDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sms.RxDemo;
@@ -699,11 +698,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = B769F6JR7B;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RxDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sms.RxDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
