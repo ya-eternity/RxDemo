@@ -28,6 +28,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        UIApplication.shared.statusBarFrame = 
         Observable.combineLatest(firstname.rx.text.orEmpty, lastName.rx.text.orEmpty) { $0 + " " + $1 }
             .map { "Greeting \($0)" }
             .bindTo(greetingLabel.rx.text)
@@ -40,6 +42,9 @@ class ViewController: UIViewController {
                 self.tapLabel.text = "Tap \(self.count)"
             })
             .addDisposableTo(disposeBag)
+        
+//        日によって、暇かたっり、いそがしかったりです
+//       
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

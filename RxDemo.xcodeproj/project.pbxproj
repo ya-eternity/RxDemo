@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		400C08FA1E694BC9000197ED /* QDailyMenuAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400C08F91E694BC9000197ED /* QDailyMenuAnimationController.swift */; };
 		C7ED9DDB28B5F3DDFF5EB5DD /* Pods_RxDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0863F86EF9D7EA14292A4B13 /* Pods_RxDemoTests.framework */; };
 		DF8B4181E763AFFEB271DAFF /* Pods_RxDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102EC682EACFA835E2655AFA /* Pods_RxDemoUITests.framework */; };
 		E982420EF36F088BB94AFBB1 /* Pods_RxDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AC7C3E757C9AFF5471A8A3 /* Pods_RxDemo.framework */; };
@@ -52,6 +53,7 @@
 		0863F86EF9D7EA14292A4B13 /* Pods_RxDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0918076108F378861A0A60DB /* Pods-RxDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDemoUITests/Pods-RxDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		102EC682EACFA835E2655AFA /* Pods_RxDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		400C08F91E694BC9000197ED /* QDailyMenuAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QDailyMenuAnimationController.swift; sourceTree = "<group>"; };
 		7DD3A6FFE6CDF1F925A06AF3 /* Pods-RxDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDemoTests/Pods-RxDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5AC7C3E757C9AFF5471A8A3 /* Pods_RxDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EEC142D26A7707E25A4447 /* Pods-RxDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDemoTests/Pods-RxDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		40FAFF611E6E5F6700484877 /* MoyaExample */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoyaExample;
+			sourceTree = "<group>";
+		};
 		F4742DC9967F2ADF2AEB6323 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +173,7 @@
 				FE4243471DE5342400319203 /* BasicModel.swift */,
 				FE4243491DE5620C00319203 /* BasicCell.swift */,
 				FEF1F9F81DEE671E0018DFFB /* SectionTableViewController.swift */,
+				400C08F91E694BC9000197ED /* QDailyMenuAnimationController.swift */,
 			);
 			path = RxWhy;
 			sourceTree = "<group>";
@@ -201,6 +211,7 @@
 		FEBA6DDF1DE2C4EA000478D9 /* RxDemo */ = {
 			isa = PBXGroup;
 			children = (
+				40FAFF611E6E5F6700484877 /* MoyaExample */,
 				FE2415F21E1B4DB60078051E /* Network */,
 				FE42434B1DE57C3C00319203 /* Support */,
 				FE4243421DE533E300319203 /* RxWhy */,
@@ -502,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2415FB1E1BAA170078051E /* Observable+ObjectMapper.swift in Sources */,
+				400C08FA1E694BC9000197ED /* QDailyMenuAnimationController.swift in Sources */,
 				FE42434A1DE5620C00319203 /* BasicCell.swift in Sources */,
 				FE4243461DE533E300319203 /* ViewController.swift in Sources */,
 				FE4243451DE533E300319203 /* ContentOffsetController.swift in Sources */,
